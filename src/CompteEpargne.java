@@ -16,7 +16,7 @@ public class ComteEpargne extends Compte {
         this.tauxInteret = tauxInteret;
     }
 
-    public void GestionCompteEpargne(){
+    public static void GestionCompteEpargne(){
         Scanner scanner = new Scanner(System.in);
         int choix = scanner.nextInt();
         while (choix !=0){
@@ -27,10 +27,10 @@ public class ComteEpargne extends Compte {
             System.out.println(" entrer votre choix: ");
             switch (choix){
                 case 1:
-
+                   //AjouterCompteEpargne();
                     break;
                 case  2:
-
+                    //AfficherComteEpargne();
                     break;
                 case 0:
                     System.out.println(" retour au menu principal. ");
@@ -39,6 +39,13 @@ public class ComteEpargne extends Compte {
                     System.out.println("choix invalide.");
             }
         }
+    }
+    public void AjouterCompteEpargne(){
+
+
+    }
+    public void AfficherComteEpargne(){
+
     }
     @Override
     public String toString() {
