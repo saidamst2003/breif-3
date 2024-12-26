@@ -69,41 +69,31 @@ public class Client {
    public void setTelephone(String telephone) {
       this.telephone = telephone;
    }
-public void gestionClient(){
+public void GestionClient(){
       Scanner sc = new Scanner(System.in);
-      int choix = -1;
-      while(choix !=0){
+      int choix = sc.nextInt();
+      while(choix !=0) {
          System.out.println(" --------GESTION DES CLIENTS-----");
          System.out.println("1. Ajouter un Client : ");
          System.out.println("2. afficher tous les Client");
          System.out.println("0. retour au menu Principal");
-         System.out.println("votre choix :0");
-         choix =sc.nextInt();
-         switch (choix){
+         System.out.println("votre choix :");
+
+         switch (choix) {
 
             case 1:
                AjouterClient();
                break;
-             case 2:
-                AfficherClient();
+            case 2:
+               AfficherClient();
                break;
             case 0:
                System.out.println(" Routour au menu Principal.");
                break;
             default:
-               System.out.println("choix invalide. veuillez réssayer.");
-
-
-
+               System.out.println("choix invalide.");
          }
-
-
-
-
-
       }
-
-
 }
    public static void AjouterClient() {
       Scanner scanner = new Scanner(System.in);
