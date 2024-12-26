@@ -16,7 +16,6 @@ public class ComteEpargne extends Compte {
         this.tauxInteret = tauxInteret;
     }
 
-
     public void GestionCompteEpargne(){
         Scanner scanner = new Scanner(System.in);
         int choix = scanner.nextInt();
