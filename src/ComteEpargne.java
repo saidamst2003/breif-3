@@ -27,10 +27,10 @@ public class ComteEpargne extends Compte {
             System.out.println(" entrer votre choix: ");
             switch (choix){
                 case 1:
-                    AjoutercompteEpargne;
+
                     break;
                 case  2:
-                    AfficherComteEpargne;
+
                     break;
                 case 0:
                     System.out.println(" retour au menu principal. ");
