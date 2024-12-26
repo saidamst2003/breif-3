@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.Scanner;
 public abstract class Compte {
     private int numero;
     private double solde;
