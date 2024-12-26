@@ -36,26 +36,24 @@ public abstract class Compte {
     }
 public void GestionCompte() {
     Scanner scanner = new Scanner(System.in);
-    int choix;
-
-    do {
-
-        System.out.println("\n--- MENU GESTION DES COMPTES BANCAIRES ---");
+    int choix = scanner.nextInt();
+while (choix !=0){
+        System.out.println("-----gestion de Compte-----");
         System.out.println("1. Ajouter un compte courant");
         System.out.println("2. Ajouter un compte epargne");
         System.out.println("0. Quitter");
         System.out.print("Entrez votre choix : ");
         choix = scanner.nextInt();
-        switch (choix){
+        switch (choix) {
             case 1:
                 AjoutercompteCourant;
                 break;
 
             case 2:
                 AjouterCompteEpargne;
-                    break;
+                break;
             case 0:
-                System.out.println("retoure au menu principal.");
+                System.out.println("retour au menu principal.");
                 break;
             default:
                 System.out.println("choix invalide.");
