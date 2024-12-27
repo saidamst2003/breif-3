@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CompteCourant extends Compte {
@@ -7,18 +8,17 @@ public class CompteCourant extends Compte {
         super(numero, solde, client);
         this.fraisBancaires = fraisBancaires;
     }
+    public  CompteCourant(){
 
+    }
     public double getFraisBancaires() {
         return fraisBancaires;
     }
-
     public void setFraisBancaires(double fraisBancaires) {
         this.fraisBancaires = fraisBancaires;
     }
 
-
-
-    public void GestionCompteCourant(){
+    public  void GestionCompteCourant(ArrayList<CompteCourant> compteCourantArrayList){
         Scanner scanner = new Scanner(System.in);
         int choix = scanner.nextInt();
         while (choix !=0){
@@ -29,10 +29,10 @@ public class CompteCourant extends Compte {
             System.out.println(" entrer votre choix: ");
             switch (choix){
                 case 1:
-                    AjoutercompteCourant;
+                    AjoutercompteCourant();
                     break;
                 case  2:
-                    AfficherComteCourant;
+                    AfficherComteCourant();
                     break;
                 case 0:
                     System.out.println(" retour au menu principal. ");
@@ -41,6 +41,12 @@ public class CompteCourant extends Compte {
                     System.out.println("choix invalide.");
             }
         }
+    }
+    public  void AjoutercompteCourant(){
+
+    }
+    public  void AfficherComteCourant(){
+
     }
         @Override
         public String toString() {

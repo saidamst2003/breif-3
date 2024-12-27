@@ -1,13 +1,17 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
-public class ComteEpargne extends Compte {
+public class CompteEpargne extends Compte {
     private double tauxInteret;
 
-    public ComteEpargne(int numero, double solde, Client client, double tauxInteret) {
+    public CompteEpargne(int numero, double solde, Client client, double tauxInteret) {
         super(numero, solde, client);
         this.tauxInteret = tauxInteret;
-    }
 
+    }
+public  CompteEpargne(){
+
+}
     public double getTauxInteret() {
         return tauxInteret;
     }
@@ -16,7 +20,7 @@ public class ComteEpargne extends Compte {
         this.tauxInteret = tauxInteret;
     }
 
-    public static void GestionCompteEpargne(){
+    public void GestionCompteEpargne(ArrayList<CompteEpargne> comptes){
         Scanner scanner = new Scanner(System.in);
         int choix = scanner.nextInt();
         while (choix !=0){
@@ -27,10 +31,10 @@ public class ComteEpargne extends Compte {
             System.out.println(" entrer votre choix: ");
             switch (choix){
                 case 1:
-                   //AjouterCompteEpargne();
+                   AjouterCompteEpargne(comptes);
                     break;
                 case  2:
-                    //AfficherComteEpargne();
+                    AfficherComteEpargne();
                     break;
                 case 0:
                     System.out.println(" retour au menu principal. ");
@@ -40,7 +44,7 @@ public class ComteEpargne extends Compte {
             }
         }
     }
-    public void AjouterCompteEpargne(){
+    public void AjouterCompteEpargne(ArrayList<CompteEpargne> comptes){
 
 
     }

@@ -2,13 +2,14 @@ import  java.util.Scanner;
 import java.util.ArrayList;
 
 public class Client {
+   Scanner scanner =new Scanner(System.in);
    private int Id;
    private String nom;
    private String prenom;
    private String email;
    private String adresse;
    private String telephone;
-   static ArrayList<Client> clients = new ArrayList<>();
+   private  ArrayList<Client> clientArrayList;
 
    public  Client(int Id, String nom, String prenom, String email, String adresse, String telephone) {
       this.Id = Id;
@@ -17,6 +18,9 @@ public class Client {
       this.email = email;
       this.adresse = adresse;
       this.telephone = telephone;
+   }
+   public Client(){
+
    }
 
    public int getId() {
@@ -69,33 +73,34 @@ public class Client {
    public void setTelephone(String telephone) {
       this.telephone = telephone;
    }
-public void GestionClient(){
-      Scanner sc = new Scanner(System.in);
-      int choix = sc.nextInt();
-      while(choix !=0) {
-         System.out.println(" --------GESTION DES CLIENTS-----");
-         System.out.println("1. Ajouter un Client : ");
-         System.out.println("2. afficher tous les Client");
-         System.out.println("0. retour au menu Principal");
-         System.out.println("votre choix :");
+public void GestionClient(ArrayList<Client> clients) {
+      this.clientArrayList=clients;
+   Scanner sc = new Scanner(System.in);
+   int choix;
+   do {
+      System.out.println(" --------GESTION DES CLIENTS-----");
+      System.out.println("1. Ajouter un Client : ");
+      System.out.println("2. afficher tous les Client");
+      System.out.println("0. retour au menu Principal");
+      System.out.println("votre choix :");
+      choix=sc.nextInt();
+      switch (choix) {
 
-         switch (choix) {
-
-            case 1:
-               AjouterClient();
-               break;
-            case 2:
-               AfficherClient();
-               break;
-            case 0:
-               System.out.println(" Routour au menu Principal.");
-               break;
-            default:
-               System.out.println("choix invalide.");
-         }
+         case 1:
+            AjouterClient(clients);
+            break;
+         case 2:
+            AfficherClient();
+            break;
+         case 0:
+            System.out.println(" Routour au menu Principal.");
+            break;
+         default:
+            System.out.println("choix invalide.");
       }
+   }while (choix!=0);
 }
-   public static void AjouterClient() {
+   public void   AjouterClient(ArrayList<Client> clients) {
       Scanner scanner = new Scanner(System.in);
       System.out.println("------- ajouter un nouvel Client-------");
       System.out.println("ID: ");
@@ -112,16 +117,24 @@ public void GestionClient(){
       String telephone = scanner.next();
       System.out.println("Client ajouté : " + nom + " " + prenom);
        clients.add(new Client(id, nom, prenom, email, adresse, telephone));
+       System.out.println("Client ajouter avec succes !");
    }
+
 
    private void AfficherClient() {
-      System.out.println("le nom du Client est : " +getNom());
-      System.out.println("le prenom du Clien est : "+ getPrenom());
-      System.out.println("le email du Client est : "+ getEmail());
-      System.out.println("l'adresse du Client est : "+ getAdresse());
-      System.out.println("le telephone du Client est : "+ getTelephone());
+//      System.out.println("le nom du Client est : " + nom);
+//      System.out.println("le prenom du Clien est : "+ prenom);
+//      System.out.println("le email du Client est : "+ email);
+//      System.out.println("l'adresse du Client est : "+ adresse);
+//      System.out.println("le telephone du Client est : " + telephone);
+
+
+      for (Client client : clientArrayList){
+         System.out.println(client.toString());
+      }
 
    }
+
 
    @Override
    public String toString() {
